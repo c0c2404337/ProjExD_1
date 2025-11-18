@@ -30,16 +30,18 @@ def main():
 
         key_lst = pg.key.get_pressed()
         
-        kk_rct.move_ip((-1, 0))
+        goukei = [-1,0]
 
         if key_lst[pg.K_UP]:
-            kk_rct.move_ip((0,-1))
+            goukei[1] -= 1      
         if key_lst[pg.K_DOWN]:
-            kk_rct.move_ip((0,+1))
+            goukei[1] += 1      
         if key_lst[pg.K_LEFT]:
-            kk_rct.move_ip((-1,0))
+            goukei[0] -= 1      
         if key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip((+2,0))
+            goukei[0] += 2
+
+        kk_rct.move_ip(goukei)
 
         screen.blit(kk_img, kk_rct) #練習4
         pg.display.update()
